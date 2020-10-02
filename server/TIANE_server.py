@@ -811,7 +811,7 @@ def runMain(commandMap=None, feedbackMap=None):
                                 'output': output, 'priority': priority}, conv_id=original_command, show=False)
             if ('telegram' in output.lower()) or (user not in self.Users.userlist and user is not None):
                 if self.telegram is not None:
-                    # Spezialfall berücksichtigen: Es kann beim besten Willen nicht ermittelt werden, an wen die Audio gesendet werden soll. Einfach beenden.
+                    # Spezialfall berücksichtigen: Es kann beim besten Willen nicht ermittelt werden, an wen dia Audio gesendet werden soll. Einfach beenden.
                     if user == None or user == 'Unknown':
                         Log.write('WARNING',
                                   'Eine Audiodatei konnte nicht abgespielt werden, da kein Nutzer als Ziel angegeben wurde',
@@ -832,13 +832,13 @@ def runMain(commandMap=None, feedbackMap=None):
                                   audiofile), conv_id=original_command, show=True)
                     return
             if raum == None:
-                # Spezialfall berücksichtigen: Es kann beim besten Willen nicht ermittelt werden, wo die Audio abgespielt soll. Einfach beenden.
+                # Spezialfall berücksichtigen: Es kann beim besten Willen nicht ermittelt werden, wo der Text gesagt werden soll. Einfach beenden.
                 if user == None or user == 'Unknown':
                     Log.write('WARNING',
                               'Eine Audiodatei konnte nicht abgespielt werden, da kein Nutzer als Ziel angegeben wurde',
                               conv_id=original_command, show=True)
                     return
-                # die Audio soll zu einem bestimmten user gesendet werden
+                # Die Audio soll zu einem bestimmten user gesendet werden
                 current_waiting_room = ('', None)
                 while True:
                     for name, room in self.rooms.items():
@@ -871,7 +871,7 @@ def runMain(commandMap=None, feedbackMap=None):
                                 return
                     time.sleep(0.03)
             else:
-                # Die Audio soll in einem bestimmten Raum gesagt werden
+                # Die Audio soll in einem bestimmten Raum abgespielt werden
                 for name, room in self.rooms.items():
                     if name.lower() == raum.lower():
                         # Dem Raum den Auftrag erteilen, es abzuspielen
