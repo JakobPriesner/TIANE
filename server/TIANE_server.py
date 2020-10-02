@@ -832,13 +832,13 @@ def runMain(commandMap=None, feedbackMap=None):
                                   audiofile), conv_id=original_command, show=True)
                     return
             if raum == None:
-                # Spezialfall berücksichtigen: Es kann beim besten Willen nicht ermittelt werden, wo der Text gesagt werden soll. Einfach beenden.
+                # Spezialfall berücksichtigen: Es kann beim besten Willen nicht ermittelt werden, wo die Audio abgespielt soll. Einfach beenden.
                 if user == None or user == 'Unknown':
                     Log.write('WARNING',
                               'Eine Audiodatei konnte nicht abgespielt werden, da kein Nutzer als Ziel angegeben wurde',
                               conv_id=original_command, show=True)
                     return
-                # Der Text soll zu einem bestimmten user gesagt werden
+                # die Audio soll zu einem bestimmten user gesendet werden
                 current_waiting_room = ('', None)
                 while True:
                     for name, room in self.rooms.items():
